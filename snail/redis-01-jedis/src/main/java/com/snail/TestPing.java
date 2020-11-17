@@ -1,6 +1,5 @@
 package com.snail;
 
-import org.omg.Messaging.SyncScopeHelper;
 import redis.clients.jedis.Jedis;
 
 public class TestPing {

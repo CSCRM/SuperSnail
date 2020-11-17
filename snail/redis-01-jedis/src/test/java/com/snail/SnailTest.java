@@ -1,10 +1,8 @@
 package com.snail;
 
 
-import com.alibaba.fastjson.JSONObject;
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
-import redis.clients.jedis.Transaction;
 
 import java.util.Set;
 
@@ -12,7 +10,7 @@ public class SnailTest {
 
     @Test
     public void test(){
-        Jedis jedis = new Jedis("192.168.35.128",6379);//192.168.35.128 192.168.150.128
+        Jedis jedis = new Jedis("192.168.150.128",6379);
         System.out.println("测试是否链接成功："+jedis.ping());
         System.out.println("清空数据："+jedis.flushDB());
         System.out.println("判断某个键是否存在："+jedis.exists("key"));
@@ -30,32 +28,5 @@ public class SnailTest {
         System.out.println("按索引查询："+jedis.select(0));
         System.out.println("当前数据库所有key："+jedis.dbSize());
         jedis.flushAll();
-    }
-
-    @Test
-    public void testTX(){
-        Jedis jedis = new Jedis("192.168.35.128",6379);
-        jedis.flushDB();
-        //开启事务
-        Transaction multi = jedis.multi();
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("j1","o1");
-        jsonObject.put("j2","o2");
-        String s = jsonObject.toJSONString();
-
-        try {
-            multi.set("k1",s);
-            multi.set("k2",s);
-            multi.exec();
-        } catch (Exception e) {
-            multi.discard();//放弃事务
-            e.printStackTrace();
-        }finally {
-            System.out.println(jedis.get("k1"));
-            System.out.println(jedis.get("k2"));
-            jedis.close();//关闭连接
-        }
-
-
     }
 }
