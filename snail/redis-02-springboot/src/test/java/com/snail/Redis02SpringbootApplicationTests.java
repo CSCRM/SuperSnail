@@ -46,17 +46,13 @@ class Redis02SpringbootApplicationTests {
         User user = new User("涡流",21);
         //序列化
         String s = new ObjectMapper().writeValueAsString(user);
-        //redisTemplate.opsForValue().set("user",user);
+        redisTemplate.opsForValue().set("user",user);
         System.out.println(redisTemplate.opsForValue().get("user"));
 
-    }
 
-    @Test
-    void testUtil(){
 //        redisUtil.set("k1", "v1");
 //        redisUtil.set("k2", "v2");
 //        redisUtil.set("k3", "v3");
-        redisUtil.del("k1","k2","k3");
+//        redisUtil.del("k1","k2","k3");
     }
-
 }
