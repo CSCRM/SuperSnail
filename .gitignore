@@ -10,4 +10,3 @@ target/*
 *.ini
 # 不排除.gitignore
 !.gitignore
-!.idea
