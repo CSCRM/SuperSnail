@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
-//练习Thread，实现多线程同步下载图片
+// 练习Thread，实现多线程同步下载图片
 public class TestThread2 extends Thread{
 
     private String url;
