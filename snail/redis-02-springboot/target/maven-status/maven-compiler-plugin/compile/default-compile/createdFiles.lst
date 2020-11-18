@@ -1,0 +1,4 @@
+com\snail\Redis02SpringbootApplication.class
+com\snail\pojo\User.class
+com\snail\utils\RedisUtil.class
+com\snail\config\RedisConfig.class
