@@ -7,12 +7,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="multithreading-01" />
         <module name="redis-02-springboot" />
         <module name="snail-sms" />
         <module name="redis-01-jedis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="multithreading-01" target="1.5" />
       <module name="redis-01-jedis" target="1.5" />
       <module name="redis-02-springboot" target="1.8" />
       <module name="snail-sms" target="1.8" />
