@@ -1,4 +1,0 @@
-com\snail\service\SendSms.class
-com\snail\controller\SmsApiController.class
-com\snail\service\impl\SendSmsImpl.class
-com\snail\SnailSmsApplication.class
